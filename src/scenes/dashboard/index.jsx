@@ -4,15 +4,21 @@ import { tokens } from "../../theme";
 import TopInfo from "../components/TopInfo";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import * as React from "react";
+// import FormControl from "@mui/material/FormControl";
+// import FormLabel from "@mui/material/FormLabel";
 import Switch from "@mui/material/Switch";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import Chip from "@mui/material/Chip";
+import Checkbox from "@mui/material/Checkbox";
 
 import Section1 from "../components/section/Section1";
 import Section2 from "../components/section/Section2";
 import Section3 from "../components/section/Section3";
 import Section4 from "../components/section/Section4";
 import Section5 from "../components/section/Section5";
+
+import LineChart from "../components/LineChart";
 
 // import sec5 from "../components/section/sec5.svg";
 // import sec4 from "../components/section/sec4.svg";
@@ -25,6 +31,8 @@ import styled from "@emotion/styled";
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(true);
@@ -269,6 +277,321 @@ const Dashboard = () => {
             </Box1>
           </Box>
         </Box>
+
+        {/* GRÁFICO DE ANÁLISE */}
+        <Box
+          gridColumn="span 12"
+          backgroundColor={colors.primary[400]}
+          height="60vh"
+        >
+          <Box m="20px 0px 0px 20px">
+            <Typography
+              mb="5px"
+              variant="h3"
+              color={colors.grey[100]}
+              fontWeight="bold"
+            >
+              Status das encomendas
+            </Typography>
+            <Typography variant="h5" color={colors.grey[400]}>
+              Análise e previsão das encomendas finalizadas
+            </Typography>
+          </Box>
+
+          <LineChart />
+        </Box>
+
+        {/* INFORMAÇÃO DIÁRIA */}
+        <Box gridColumn="span 3" backgroundColor={colors.primary[400]}>
+          <Box
+            m="20px"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Typography variant="h5" color={colors.grey[200]} m="10px">
+              Concluídas (hoje)
+            </Typography>
+            <Typography variant="h3" color={colors.greenAccent[500]}>
+              15
+            </Typography>
+          </Box>
+          <Box
+            m="15px"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Typography variant="h5" color={colors.grey[200]} m="10px">
+              Recebidas (hoje)
+            </Typography>
+            <Typography variant="h3" color={colors.greenAccent[500]}>
+              10
+            </Typography>
+          </Box>
+          <Box
+            m="15px"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Typography variant="h5" color={colors.grey[200]} m="10px">
+              Tempo de espera (secção)
+            </Typography>
+            <Typography variant="h3" color={colors.greenAccent[500]}>
+              2 min
+            </Typography>
+          </Box>
+          <Box
+            m="15px"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Typography variant="h5" color={colors.grey[200]} m="10px">
+              Tempo por encomenda
+            </Typography>
+            <Typography variant="h3" color={colors.greenAccent[500]}>
+              20 min
+            </Typography>
+          </Box>
+          <Box
+            m="15px"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Typography variant="h5" color={colors.grey[200]} m="10px">
+              Utilização de energia
+            </Typography>
+            <Typography variant="h3" color={colors.greenAccent[500]}>
+              80%
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+      {/* REPORTS  */}
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(16, 1fr)"
+        gridAutoFlow="140px"
+        gap="20px"
+        margin="20px 0 20px 0"
+        pb="30px"
+      >
+        <Box
+          gridColumn="span 8"
+          backgroundColor={colors.primary[400]}
+          height="55vh"
+        >
+          <Box
+            m="30px 30px 20px 30px"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="flex-start"
+          >
+            <Box>
+              <Typography
+                mb="5px"
+                variant="h3"
+                color={colors.grey[100]}
+                fontWeight="bold"
+              >
+                Últimos Relatórios
+              </Typography>
+              <Typography variant="h5" color={colors.grey[400]}>
+                Todas as secções
+              </Typography>
+            </Box>
+
+            <a href="/Qualidade" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box>
+          <Box3
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" color={colors.grey[100]}>
+              Relatório X
+            </Typography>
+            <a href="#" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box3>
+          <Box3
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" color={colors.grey[100]}>
+              Relatório X
+            </Typography>
+            <a href="#" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box3>
+          <Box3
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" color={colors.grey[100]}>
+              Relatório X
+            </Typography>
+            <a href="#" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box3>
+          <Box3
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" color={colors.grey[100]}>
+              Relatório X
+            </Typography>
+            <a href="#" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box3>
+          <Box3
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" color={colors.grey[100]}>
+              Relatório X
+            </Typography>
+            <a href="#" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box3>
+        </Box>
+
+        {/* TASKS */}
+        <Box
+          gridColumn="span 8"
+          backgroundColor={colors.primary[400]}
+          height="55vh"
+        >
+          <Box
+            m="30px 30px 20px 30px"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="flex-start"
+          >
+            <Box>
+              <Typography
+                mb="5px"
+                variant="h3"
+                color={colors.grey[100]}
+                fontWeight="bold"
+              >
+                Tarefas
+              </Typography>
+              <Typography variant="h5" color={colors.grey[400]}>
+                Hoje
+              </Typography>
+            </Box>
+            <Box>
+              <a href="#" style={{ textDecoration: "none" }}>
+                <Typography variant="h5" color={colors.blueAccent[400]}>
+                  Ver todas
+                </Typography>
+              </a>
+            </Box>
+          </Box>
+          <Box4>
+            <Typography variant="h4" color={colors.grey[400]}>
+              Cria nova tarefa
+            </Typography>
+
+            <AddBoxIcon />
+          </Box4>
+          <Box4>
+            <Box display="flex" alignItems="center">
+              <Checkbox
+                {...label}
+                defaultChecked
+                sx={{
+                  color: colors.grey[400],
+                  "&.Mui-checked": {
+                    color: colors.grey[100],
+                  },
+                }}
+              />
+              <Typography variant="h4" color={colors.grey[100]}>
+                Terminar encomenda ID.20
+              </Typography>
+            </Box>
+            <Chip label="Prioritário" color="warning" size="small" />
+          </Box4>
+          <Box4>
+            <Box display="flex" alignItems="center">
+              <Checkbox
+                {...label}
+                sx={{
+                  color: colors.grey[400],
+                  "&.Mui-checked": {
+                    color: colors.grey[100],
+                  },
+                }}
+              />
+              <Typography variant="h4" color={colors.grey[100]}>
+                Falta de material na montagem
+              </Typography>
+            </Box>
+            <Chip label="Urgente" color="error" size="small" />
+          </Box4>
+          <Box4>
+            <Box display="flex" alignItems="center">
+              <Checkbox
+                {...label}
+                sx={{
+                  color: colors.grey[400],
+                  "&.Mui-checked": {
+                    color: colors.grey[100],
+                  },
+                }}
+              />
+              <Typography variant="h4" color={colors.grey[100]}>
+                Nome da tarefa
+              </Typography>
+            </Box>
+            <Chip label="Novo" color="info" size="small" />
+          </Box4>
+          <Box4>
+            <Box display="flex" alignItems="center">
+              <Checkbox
+                {...label}
+                sx={{
+                  color: colors.grey[400],
+                  "&.Mui-checked": {
+                    color: colors.grey[100],
+                  },
+                }}
+              />
+              <Typography variant="h4" color={colors.grey[100]}>
+                Nome da tarefa
+              </Typography>
+            </Box>
+            <Chip label="Padrão" color="default" size="small" />
+          </Box4>
+        </Box>
       </Box>
     </Box>
   );
@@ -295,4 +618,25 @@ const Box2 = styled.div`
 const Divider = styled.div`
   width: 100%;
   height: 20px;
+`;
+
+const Box3 = styled.div`
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px 20px;
+
+  :hover {
+    background-color: grey;
+    transition: background-color 0.5s ease;
+  }
+`;
+
+const Box4 = styled.div`
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 16px 15px;
 `;

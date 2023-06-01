@@ -32,7 +32,7 @@ export const tokens = (mode) => ({
           200: "#b7ebde",
           300: "#94e2cd",
           400: "#70d8bd",
-          500: "#4cceac",
+          500: "#198754", //anterior ->#4CCEAC
           600: "#3da58a",
           700: "#2e7c67",
           800: "#1e5245",
@@ -89,7 +89,7 @@ export const tokens = (mode) => ({
           200: "#1e5245",
           300: "#2e7c67",
           400: "#3da58a",
-          500: "#4cceac",
+          500: "#198754", //anterior ->#4CCEAC
           600: "#70d8bd",
           700: "#94e2cd",
           800: "#b7ebde",
@@ -166,27 +166,27 @@ export const themeSettings = (mode) => {
       fontFamily: ["Mulish", "sans-serif"].join(","),
       fontSize: 12,
       h1: {
-        fontFamily: ["Mulush", "sans-serif"].join(","),
+        fontFamily: ["Mulish", "sans-serif"].join(","),
         fontSize: 40,
       },
       h2: {
-        fontFamily: ["Mulush", "sans-serif"].join(","),
+        fontFamily: ["Mulish", "sans-serif"].join(","),
         fontSize: 32,
       },
       h3: {
-        fontFamily: ["Mulush", "sans-serif"].join(","),
+        fontFamily: ["Mulish", "sans-serif"].join(","),
         fontSize: 24,
       },
       h4: {
-        fontFamily: ["Mulush", "sans-serif"].join(","),
+        fontFamily: ["Mulish", "sans-serif"].join(","),
         fontSize: 20,
       },
       h5: {
-        fontFamily: ["Mulush", "sans-serif"].join(","),
+        fontFamily: ["Mulish", "sans-serif"].join(","),
         fontSize: 16,
       },
       h6: {
-        fontFamily: ["Mulush", "sans-serif"].join(","),
+        fontFamily: ["Mulish", "sans-serif"].join(","),
         fontSize: 14,
       },
     },

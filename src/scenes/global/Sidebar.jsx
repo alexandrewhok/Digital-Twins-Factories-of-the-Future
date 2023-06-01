@@ -35,7 +35,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true); //se for false o site inicia com a barra aberta
   const [selected, setSelected] = useState("Dashboard");
 
   return (
