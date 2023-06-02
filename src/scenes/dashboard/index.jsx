@@ -2,11 +2,9 @@ import { Box, Typography, useTheme } from "@mui/material";
 import Header from "../components/Header";
 import { tokens } from "../../theme";
 import TopInfo from "../components/TopInfo";
-import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import * as React from "react";
-// import FormControl from "@mui/material/FormControl";
-// import FormLabel from "@mui/material/FormLabel";
+
 import Switch from "@mui/material/Switch";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import Chip from "@mui/material/Chip";
@@ -20,13 +18,9 @@ import Section5 from "../components/section/Section5";
 
 import LineChart from "../components/LineChart";
 
-// import sec5 from "../components/section/sec5.svg";
-// import sec4 from "../components/section/sec4.svg";
-// import sec3 from "../components/section/sec3.svg";
-// import sec2 from "../components/section/sec2.svg";
-// import sec1 from "../components/section/sec1.svg";
 import { useState } from "react";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -116,15 +110,21 @@ const Dashboard = () => {
           >
             <Box m="10px">
               {/* <img src={sec5} alt="sec5" /> */}
-              <Section5 checked={checked5} />
+              <Link to="/Seccoes?tab=4">
+                <Section5 checked={checked5} />
+              </Link>
             </Box>
             <Box m="10px">
               {/* <img src={sec4} alt="sec4" /> */}
-              <Section4 checked={checked4} />
+              <Link to="/Seccoes?tab=3">
+                <Section4 checked={checked4} />
+              </Link>
             </Box>
             <Box m="10px">
               {/* <img src={sec3} alt="sec3" /> */}
-              <Section3 checked={checked3} />
+              <Link to="/Seccoes?tab=2">
+                <Section3 checked={checked3} />
+              </Link>
             </Box>
           </Box>
           <Box
@@ -135,11 +135,15 @@ const Dashboard = () => {
           >
             <Box m="10px">
               {/* <img src={sec1} alt="sec1" /> */}
-              <Section1 checked={checked1} />
+              <Link to="/Seccoes?tab=0">
+                <Section1 checked={checked1} />
+              </Link>
             </Box>
             <Box m="10px">
               {/* <img src={sec2} alt="sec2" /> */}
-              <Section2 checked={checked2} />
+              <Link to="/Seccoes?tab=1">
+                <Section2 checked={checked2} />
+              </Link>
             </Box>
           </Box>
         </Box>
@@ -558,7 +562,11 @@ const Dashboard = () => {
             <Chip label="Urgente" color="error" size="small" />
           </Box4>
           <Box4>
-            <Box display="flex" alignItems="center">
+            <Box
+              display="flex"
+              alignItems="center"
+              backgroundColor="colors.primary[400]"
+            >
               <Checkbox
                 {...label}
                 sx={{
@@ -575,7 +583,11 @@ const Dashboard = () => {
             <Chip label="Novo" color="info" size="small" />
           </Box4>
           <Box4>
-            <Box display="flex" alignItems="center">
+            <Box
+              display="flex"
+              alignItems="center"
+              backgroundColor="colors.primary[400]"
+            >
               <Checkbox
                 {...label}
                 sx={{
@@ -626,6 +638,7 @@ const Box3 = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px 16px 20px;
+  background-color: #1f2a40;
 
   :hover {
     background-color: grey;
@@ -639,4 +652,5 @@ const Box4 = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 16px 15px;
+  background-color: #1f2a40;
 `;
