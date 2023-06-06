@@ -638,7 +638,7 @@ const Box3 = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px 16px 20px;
-  background-color: #1f2a40;
+  background-color: colors.primary[400];
 
   :hover {
     background-color: grey;
@@ -652,5 +652,5 @@ const Box4 = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 16px 15px;
-  background-color: #1f2a40;
+  background-color: colors.primary[400];
 `;

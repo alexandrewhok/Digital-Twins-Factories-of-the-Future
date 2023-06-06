@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import queryString from "query-string";
-// import { number } from "yup";
+// import { styled } from "@mui/material/styles";
 
 import Seccao1 from "../components/Seccao1";
 import Seccao2 from "../components/Seccao2";
@@ -89,30 +89,35 @@ export default function NavTabs() {
       </Box>
 
       <Box sx={{ width: "100%" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="nav tabs example"
+        <Box
+          sx={{
+            borderBottom: 1,
+            borderColor: "divider",
+          }}
         >
-          {/* <LinkTab label="Page One" to="/drafts" />
-          <LinkTab label="Page Two" to="/Seccao1" />
-          <LinkTab label="Page Three" href="/spam" /> */}
-
-          <Tab label="SECÇÃO 1" {...a11yProps(0)} />
-          <Tab label="SECÇÃO 2" {...a11yProps(1)} />
-          <Tab label="SECÇÃO 3" {...a11yProps(2)} />
-          <Tab label="SECÇÃO 4" {...a11yProps(3)} />
-          <Tab label="SECÇÃO 5" {...a11yProps(4)} />
-
-          {/* <Tab
-      component="a"
-      onClick={(event) => {
-        console.log(event);
-        event.preventDefault();
-      }}
-      {...props}
-    /> */}
-        </Tabs>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            TabIndicatorProps={{ sx: { backgroundColor: "#adadad" } }}
+            sx={{
+              "& button: hover": { backgroundColor: "grey", color: "white" },
+              "& button": {
+                fontWeight: theme.typography.h4,
+                textTransform: "none",
+              },
+              "& button.Mui-selected": {
+                backgroundColor: "#198754",
+                color: "white",
+              },
+            }}
+          >
+            <Tab label="Secção 1" {...a11yProps(0)} />
+            <Tab label="Secção 2" {...a11yProps(1)} />
+            <Tab label="Secção 3" {...a11yProps(2)} />
+            <Tab label="Secção 4" {...a11yProps(3)} />
+            <Tab label="Secção 5" {...a11yProps(4)} />
+          </Tabs>
+        </Box>
         <TabPanel value={value} index={0}>
           <Seccao1 />
         </TabPanel>

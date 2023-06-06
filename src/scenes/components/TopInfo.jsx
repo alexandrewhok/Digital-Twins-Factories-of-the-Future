@@ -19,7 +19,7 @@ const TopInfo = ({ title, subtitle }) => {
         </Box>
         <Box>
           <Typography
-            variant="h4"
+            variant="h2"
             fontWeight="bold"
             sx={{ color: colors.greenAccent[500] }}
           >
