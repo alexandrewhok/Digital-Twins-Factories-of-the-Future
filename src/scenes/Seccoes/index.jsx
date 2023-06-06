@@ -5,24 +5,16 @@ import Tab from "@mui/material/Tab";
 import Header from "../components/Header";
 import { tokens } from "../../theme";
 import PropTypes from "prop-types";
-import {
-  MemoryRouter,
-  Route,
-  Routes,
-  Link,
-  matchPath,
-  useLocation,
-} from "react-router-dom";
-import { StaticRouter } from "react-router-dom/server";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import queryString from "query-string";
-// import { styled } from "@mui/material/styles";
 
 import Seccao1 from "../components/Seccao1";
 import Seccao2 from "../components/Seccao2";
 import Seccao3 from "../components/Seccao3";
 import Seccao4 from "../components/Seccao4";
 import Seccao5 from "../components/Seccao5";
+import { useNavigate } from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,22 +51,26 @@ function LinkTab(props) {
 
 export default function NavTabs() {
   const [value, setValue] = useState(0);
-
   const location = useLocation();
   const queryParams = queryString.parse(location.search);
-  const tabValue = queryParams.tab;
-  console.log(Number(tabValue));
+  const tabValue = Number(queryParams.tab);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setValue(Number(tabValue));
-  }, []);
+    if (tabValue >= 0 && tabValue <= 4) {
+      setValue(tabValue);
+    } else {
+      navigate("/Seccoes?tab=0", { replace: true });
+    }
+  }, [tabValue, navigate]);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   const handleChange = (event, newValue) => {
-    console.log(newValue);
     setValue(newValue);
+    navigate(`/Seccoes?tab=${newValue}`);
   };
 
   TabPanel.propTypes = {
@@ -108,7 +104,7 @@ export default function NavTabs() {
             onChange={handleChange}
             TabIndicatorProps={{ sx: { backgroundColor: "#adadad" } }}
             sx={{
-              "& button: hover": { backgroundColor: "grey", color: "white" },
+              "& button:hover": { backgroundColor: "grey", color: "white" },
               "& button": {
                 fontWeight: theme.typography.h4,
                 textTransform: "none",
