@@ -43,7 +43,7 @@ const Dashboard = () => {
   // };
 
   return (
-    <Box m="15px">
+    <Box m="15px" pb="30px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Visão geral da fábrica" />
       </Box>
@@ -381,7 +381,6 @@ const Dashboard = () => {
         gridAutoFlow="140px"
         gap="20px"
         margin="20px 0 20px 0"
-        pb="30px"
       >
         <Box
           gridColumn="span 8"

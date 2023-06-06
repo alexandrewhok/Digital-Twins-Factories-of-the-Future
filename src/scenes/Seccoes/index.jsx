@@ -5,7 +5,15 @@ import Tab from "@mui/material/Tab";
 import Header from "../components/Header";
 import { tokens } from "../../theme";
 import PropTypes from "prop-types";
-import { useLocation } from "react-router-dom";
+import {
+  MemoryRouter,
+  Route,
+  Routes,
+  Link,
+  matchPath,
+  useLocation,
+} from "react-router-dom";
+import { StaticRouter } from "react-router-dom/server";
 import { useState, useEffect } from "react";
 import queryString from "query-string";
 // import { styled } from "@mui/material/styles";
