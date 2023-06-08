@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
@@ -11,7 +11,6 @@ import Dispositivos from "./scenes/Dispositivos";
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-import Seccao1 from "./scenes/components/Seccao1";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -21,9 +20,9 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="app">
+        <div style={{ display: "flex" }}>
           <Sidebar isSidebar={isSidebar} />
-          <main className="content">
+          <div style={{ flex: 1, overflow: "auto" }}>
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
@@ -33,7 +32,7 @@ function App() {
               <Route exact path="/MateriaPrima" element={<MateriaPrima />} />
               <Route exact path="/Dispositivos" element={<Dispositivos />} />
             </Routes>
-          </main>
+          </div>
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>

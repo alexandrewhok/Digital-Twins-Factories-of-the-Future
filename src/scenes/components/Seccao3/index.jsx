@@ -106,7 +106,6 @@ const Seccao3 = () => {
         gridTemplateColumns="repeat(16, 1fr)"
         gridAutoFlow="140px"
         gap="20px"
-        pb="20px"
       >
         {/* COLUNA 2 */}
         <Box gridColumn="span 8" backgroundColor={colors.primary[400]}>

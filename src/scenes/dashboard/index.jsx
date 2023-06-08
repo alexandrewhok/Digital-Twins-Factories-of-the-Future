@@ -61,7 +61,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <TopInfo title="Em produção" subtitle="20" />
+          <TopInfo title="Em produção" subtitle="20" subtitleColor="green" />
         </Box>
 
         <Box

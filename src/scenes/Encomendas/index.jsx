@@ -1,19 +1,97 @@
 import * as React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  DialogContentText,
+  InputAdornment,
+  useTheme,
+  Popover,
+  IconButton,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import Header from "../components/Header";
 import TopInfo from "../components/TopInfo";
 import { tokens } from "../../theme";
-import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import styled from "@emotion/styled";
 import { DataGrid } from "@mui/x-data-grid";
 
 import { mockDataOrders } from "../../data/mockData";
 
-const Dashboard = () => {
+const Encomendas = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  // BOTÃO DE REGISTAR ENCOMENDA
+  const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openPopover, setOpenPopover] = React.useState(false);
+  const anchorRef = React.useRef(null);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleConfirm = () => {
+    setOpen(false);
+    setTimeout(() => {
+      setOpenPopover(true);
+      setShowCloseIcon(true);
+    }, 1000); // Adjust the delay as needed
+  };
+
+  const handleClosePopover = () => {
+    setOpenPopover(false);
+    setShowCloseIcon(false);
+  };
+
+  // const openPopover = Boolean(anchorEl);
+  const popoverId = openPopover ? "popover" : undefined;
+
+  // Form state
+  const [orderName, setOrderName] = React.useState("");
+  const [orderValue, setOrderValue] = React.useState("");
+  const [selectedMaterials, setSelectedMaterials] = React.useState([]);
+  const [materialQuantities, setMaterialQuantities] = React.useState({});
+  const materials = ["Madeira", "Ferro", "Vidro"];
+  const [showCloseIcon, setShowCloseIcon] = React.useState(false);
+
+  const handleOrderNameChange = (event) => {
+    setOrderName(event.target.value);
+  };
+
+  const handleOrderValueChange = (event) => {
+    setOrderValue(event.target.value);
+  };
+
+  const handleMaterialClick = (material) => {
+    setSelectedMaterials((prevSelected) => {
+      if (prevSelected.includes(material)) {
+        return prevSelected.filter((selected) => selected !== material);
+      } else {
+        return [...prevSelected, material];
+      }
+    });
+  };
+  const handleMaterialQuantityChange = (event, material) => {
+    const value = event.target.value;
+    setMaterialQuantities((prevState) => ({
+      ...prevState,
+      [material]: value,
+    }));
+  };
+
+  //TABELA
   const columns = [
     {
       field: "id",
@@ -43,7 +121,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box m="15px" pb="30px">
+    <Box m="15px" pb="20px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header
           title="ENCOMENDAS"
@@ -136,6 +214,7 @@ const Dashboard = () => {
                 </Typography>
               </Box>
               <Box>
+                {/* BOTÃO PARA ABRIR OVERLAY DE REGISTAR ENCOMENDA */}
                 <Button
                   sx={{
                     backgroundColor: colors.blueAccent[600],
@@ -149,10 +228,238 @@ const Dashboard = () => {
                       color: colors.blueAccent[600],
                     },
                   }}
+                  onClick={handleClickOpen}
                 >
                   Registar encomenda
-                  <AddIcon sx={{ ml: "10px" }} />
+                  {/* <AddIcon sx={{ ml: "10px" }} /> */}
                 </Button>
+                {/* DIALOG DE REGISTAR ENCOMENDA */}
+                <Dialog
+                  open={open}
+                  onClose={handleClose}
+                  maxWidth="sm"
+                  fullWidth
+                >
+                  <DialogTitle
+                    sx={{
+                      backgroundColor: colors.primary[400],
+                      color: colors.primary[100],
+                    }}
+                  >
+                    <Typography variant="h3">
+                      Registar nova encomenda
+                    </Typography>
+                  </DialogTitle>
+                  <DialogContent
+                    sx={{
+                      height: "70vh",
+                      backgroundColor: colors.primary[400],
+                      padding: "30px",
+                    }}
+                  >
+                    <DialogContentText
+                      sx={{ color: colors.primary[100], paddingTop: "20px" }}
+                    >
+                      Introduza os dados da nova encomenda
+                    </DialogContentText>
+                    <Typography variant="subtitle1">Nome:</Typography>
+                    <TextField
+                      required
+                      margin="dense"
+                      id="nome-encomenda"
+                      label="Nome da encomenda"
+                      type="text"
+                      fullWidth
+                      placeholder="Introduzir nome"
+                    />
+                    <Typography variant="subtitle1">Valor:</Typography>
+                    <TextField
+                      required
+                      margin="dense"
+                      id="valor-encomenda"
+                      label="Valor"
+                      type="text"
+                      fullWidth
+                      inputProps={{
+                        inputMode: "numeric",
+                        pattern: "[0-9]*",
+                      }}
+                      onChange={(event) => {
+                        event.target.value = event.target.value.replace(
+                          /[^0-9]/g,
+                          ""
+                        );
+                      }}
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">€</InputAdornment>
+                        ),
+                      }}
+                    />
+
+                    <Box mt={2}>
+                      <Typography variant="subtitle1">Materiais:</Typography>
+                      <Box mt={1} display="flex" justifyContent="flex-start">
+                        {materials.map((material, index) => (
+                          <Button
+                            key={material}
+                            variant={
+                              selectedMaterials.includes(material)
+                                ? "contained"
+                                : "outlined"
+                            }
+                            onClick={() => handleMaterialClick(material)}
+                            sx={{
+                              marginRight: "8px",
+                              backgroundColor: selectedMaterials.includes(
+                                material
+                              )
+                                ? "green"
+                                : "transparent",
+                              color: selectedMaterials.includes(material)
+                                ? "white"
+                                : "green",
+                              textTransform: "none",
+                              "&:hover": {
+                                backgroundColor: selectedMaterials.includes(
+                                  material
+                                )
+                                  ? "darkgreen"
+                                  : "lightgreen",
+                              },
+                            }}
+                          >
+                            <Typography variant="h5">{material}</Typography>
+                          </Button>
+                        ))}
+                      </Box>
+                    </Box>
+                    {selectedMaterials.length > 0 && (
+                      <Box mt={2}>
+                        {selectedMaterials.map((material) => (
+                          <TextField
+                            required
+                            margin="dense"
+                            id={`quantidade-${material}`}
+                            label={`Quantidade (${material})`}
+                            type="text"
+                            fullWidth
+                            inputProps={{
+                              inputMode: "numeric",
+                              pattern: "[0-9]*",
+                            }}
+                            onChange={(event) => {
+                              event.target.value = event.target.value.replace(
+                                /[^0-9]/g,
+                                ""
+                              );
+                            }}
+                            InputProps={{
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  kg
+                                </InputAdornment>
+                              ),
+                            }}
+                          />
+                        ))}
+                      </Box>
+                    )}
+                    <Typography variant="subtitle1" mt={2}>
+                      Observações:
+                    </Typography>
+                    <TextField
+                      margin="dense"
+                      id="observacoes"
+                      label="Adicionar observações"
+                      multiline
+                      rows={4}
+                      fullWidth
+                      variant="outlined"
+                    />
+                  </DialogContent>
+                  <DialogActions
+                    sx={{
+                      backgroundColor: colors.primary[400],
+                      color: colors.primary[100],
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Button
+                      sx={{
+                        backgroundColor: colors.grey[500],
+                        color: "white",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        padding: "10px 20px",
+
+                        "&:hover": {
+                          backgroundColor: colors.grey[600],
+                          color: "white",
+                        },
+                      }}
+                      onClick={handleClose}
+                      color="error"
+                    >
+                      Cancelar
+                    </Button>
+                    <Button
+                      ref={anchorRef}
+                      id="confirm-button"
+                      onClick={handleConfirm}
+                      aria-describedby={popoverId}
+                      variant="contained"
+                      sx={{
+                        backgroundColor: colors.greenAccent[500],
+                        color: "white",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        padding: "10px 20px",
+
+                        "&:hover": {
+                          backgroundColor: colors.greenAccent[600],
+                          color: "white",
+                        },
+                      }}
+                    >
+                      Confirmar
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+                <Popover
+                  open={openPopover}
+                  anchorEl={anchorRef.current}
+                  onClose={handleClosePopover}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                >
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                    p={2}
+                    sx={{
+                      backgroundColor: colors.greenAccent[400],
+                      color: colors.primary[400],
+                      padding: "10px",
+                    }}
+                  >
+                    <Typography variant="subtitle1">
+                      Nova encomenda adicionada com sucesso!!
+                    </Typography>
+                    {showCloseIcon && (
+                      <IconButton onClick={handleClosePopover}>
+                        <CloseIcon />
+                      </IconButton>
+                    )}
+                  </Box>
+                </Popover>
               </Box>
             </Box>
             {/* TABELA DE ENCOMENDAS */}
@@ -210,4 +517,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Encomendas;

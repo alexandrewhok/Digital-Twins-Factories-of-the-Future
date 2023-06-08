@@ -1,28 +1,27 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import Header from "../components/Header";
 import { tokens } from "../../theme";
-import TopInfo from "../components/TopInfo";
 import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined"; //Dispositivos
 import IconButton from "@mui/material/IconButton";
+import Header from "../components/Header";
 
 const Dispositivos = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box m="15px" mb="30px">
+    <Box m="15px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header
           title="DISPOSITIVOS"
-          subtitle="Ligação a dispositivos da fábica"
+          subtitle="Ligação a dispositivos externos"
         />
       </Box>
       <Box
         display="flex"
         alignItems="center"
         justifyContent="center"
-        height="50vh"
-        m="20px"
+        height="calc(100vh - 200px)" /* Subtract the height of the top bar if it has a fixed height */
+        overflow="hidden" /* Hide any content overflow */
       >
         <Box
           backgroundColor={colors.primary[400]}

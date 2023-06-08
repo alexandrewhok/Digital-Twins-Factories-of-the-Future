@@ -1,9 +1,12 @@
 import { Typography, Box, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 
-const TopInfo = ({ title, subtitle }) => {
+const TopInfo = ({ title, subtitle, subtitleColor = "grey.100" }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  // Get the color object from the theme palette
+  const colorObject = theme.palette[subtitleColor];
 
   return (
     <Box width="100%" m="30px">
@@ -21,7 +24,7 @@ const TopInfo = ({ title, subtitle }) => {
           <Typography
             variant="h2"
             fontWeight="bold"
-            sx={{ color: colors.greenAccent[500] }}
+            sx={{ color: colorObject }} // Use the color object
           >
             {subtitle}
           </Typography>
