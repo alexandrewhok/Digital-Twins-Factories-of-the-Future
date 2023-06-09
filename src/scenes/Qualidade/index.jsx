@@ -193,24 +193,6 @@ const Qualidade = () => {
                 </Typography>
               </Box>
               <Box>
-                {/* <Button
-                  sx={{
-                    backgroundColor: colors.redAccent[600],
-                    color: colors.grey[100],
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                    padding: "10px 20px",
-                    marginRight: "25px",
-
-                    "&:hover": {
-                      backgroundColor: colors.redAccent[700],
-                      color: colors.grey[100],
-                    },
-                  }}
-                >
-                  Reportar erro
-                  <WarningIcon sx={{ ml: "10px" }} />
-                </Button> */}
                 <Button
                   sx={{
                     backgroundColor: colors.redAccent[600],

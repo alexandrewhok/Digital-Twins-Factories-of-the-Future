@@ -18,9 +18,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import Header from "../components/Header";
 import TopInfo from "../components/TopInfo";
 import { tokens } from "../../theme";
-import AddIcon from "@mui/icons-material/Add";
-import styled from "@emotion/styled";
+// import AddIcon from "@mui/icons-material/Add";
+// import styled from "@emotion/styled";
 import { DataGrid } from "@mui/x-data-grid";
+import { Link, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { mockDataOrders } from "../../data/mockData";
 
@@ -92,6 +94,8 @@ const Encomendas = () => {
   };
 
   //TABELA
+  const { id } = useParams(); // Get the ID parameter from the URL
+
   const columns = [
     {
       field: "id",
@@ -118,7 +122,46 @@ const Encomendas = () => {
       headerName: "Data de registo",
       flex: 1,
     },
+    {
+      field: "Maisdetalhes",
+      headerName: "Mais detalhes",
+      flex: 1,
+      renderCell: () => (
+        <Button
+          sx={{
+            backgroundColor: colors.greenAccent[600],
+            color: colors.grey[100],
+            fontSize: "10px",
+            fontWeight: "regular",
+            padding: "10px 20px",
+
+            "&:hover": {
+              backgroundColor: colors.grey[100],
+              color: colors.blueAccent[600],
+            },
+          }}
+          variant="contained"
+          color="primary"
+          component={Link}
+          to="/EncomendaX"
+        >
+          Mais detalhes
+        </Button>
+        //   <Button
+        //   variant="contained"
+        //   color="primary"
+        //   component={Link}
+        //   to={`/EncomendaX/${params.row.id}`}
+        // >
+        //  Mais detalhes
+        // </Button> //PARA PERCORRER TODOS OS IDS
+      ),
+    },
   ];
+
+  const handleDetailsClick = (orderId) => {
+    console.log("Clicked on order with ID:", orderId);
+  };
 
   return (
     <Box m="15px" pb="20px">

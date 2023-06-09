@@ -8,6 +8,7 @@ import Seccoes from "./scenes/Seccoes";
 import Qualidade from "./scenes/Qualidade";
 import MateriaPrima from "./scenes/MateriaPrima";
 import Dispositivos from "./scenes/Dispositivos";
+import EncomendaX from "./scenes/EncomendaX";
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -31,6 +32,7 @@ function App() {
               <Route exact path="/Seccoes" element={<Seccoes />} />
               <Route exact path="/MateriaPrima" element={<MateriaPrima />} />
               <Route exact path="/Dispositivos" element={<Dispositivos />} />
+              <Route exact path="/EncomendaX" element={<EncomendaX />} />
             </Routes>
           </div>
         </div>
