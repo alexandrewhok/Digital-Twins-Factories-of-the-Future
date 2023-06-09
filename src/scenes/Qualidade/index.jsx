@@ -32,12 +32,21 @@ const Qualidade = () => {
 
   // BOTÃO DE REGISTAR ENCOMENDA
   const [open, setOpen] = React.useState(false);
+  const [openReportErrorDialog, setOpenReportErrorDialog] =
+    React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [openPopover, setOpenPopover] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedSection, setSelectedSection] = React.useState("");
   const [selectedOrder, setSelectedOrder] = React.useState("");
   const [selectedType, setSelectedType] = React.useState("");
+
+  const handleOpenReportErrorDialog = () => {
+    setOpenReportErrorDialog(true);
+  };
+  const handleCloseReportErrorDialog = () => {
+    setOpenReportErrorDialog(false);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -193,6 +202,24 @@ const Qualidade = () => {
                 </Typography>
               </Box>
               <Box>
+                {/* <Button
+                  sx={{
+                    backgroundColor: colors.redAccent[600],
+                    color: colors.grey[100],
+                    fontSize: "14px",
+                    fontWeight: "bold",
+                    padding: "10px 20px",
+                    marginRight: "25px",
+
+                    "&:hover": {
+                      backgroundColor: colors.redAccent[700],
+                      color: colors.grey[100],
+                    },
+                  }}
+                >
+                  Reportar erro
+                  <WarningIcon sx={{ ml: "10px" }} />
+                </Button> */}
                 <Button
                   sx={{
                     backgroundColor: colors.redAccent[600],
@@ -207,15 +234,15 @@ const Qualidade = () => {
                       color: colors.grey[100],
                     },
                   }}
-                  onClick={handleClickOpen}
+                  onClick={handleOpenReportErrorDialog}
                 >
                   Reportar erro
                   <WarningIcon sx={{ ml: "10px" }} />
                 </Button>
                 {/* DIALOG DE REPORTAR ERRO */}
                 <Dialog
-                  open={open}
-                  onClose={handleClose}
+                  open={openReportErrorDialog}
+                  onClose={handleCloseReportErrorDialog}
                   maxWidth="sm"
                   fullWidth
                 >
