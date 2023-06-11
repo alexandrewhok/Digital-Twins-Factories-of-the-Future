@@ -130,7 +130,7 @@ const Seccao1 = () => {
               </Typography>
             </Box>
 
-            <a href="/Qualidade" style={{ textDecoration: "none" }}>
+            <a href="/Encomendas" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
                 Mais detalhes
               </Typography>

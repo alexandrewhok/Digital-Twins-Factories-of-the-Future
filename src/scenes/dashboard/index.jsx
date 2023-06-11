@@ -382,11 +382,7 @@ const Dashboard = () => {
         gap="20px"
         margin="20px 0 20px 0"
       >
-        <Box
-          gridColumn="span 8"
-          backgroundColor={colors.primary[400]}
-          height="55vh"
-        >
+        <Box gridColumn="span 8" backgroundColor={colors.primary[400]}>
           <Box
             m="30px 30px 20px 30px"
             display="flex"
@@ -636,7 +632,7 @@ const Box3 = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 16px 20px;
+  padding: 20px 30px 20px;
   background-color: colors.primary[400];
 
   :hover {
