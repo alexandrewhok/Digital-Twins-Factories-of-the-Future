@@ -952,7 +952,7 @@ const EncomendaX = () => {
         gap="20px"
       >
         <Box gridColumn="span 16" backgroundColor={colors.primary[400]}>
-          <Box m="30px 30px 20px 30px">
+          <Box m="30px">
             <Typography
               mb="20px"
               variant="h3"

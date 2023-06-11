@@ -21,6 +21,7 @@ import { tokens } from "../../theme";
 import AddIcon from "@mui/icons-material/Add";
 // import styled from "@emotion/styled";
 import { DataGrid } from "@mui/x-data-grid";
+import { Link, useParams } from "react-router-dom";
 import WarningIcon from "@mui/icons-material/Warning";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -116,6 +117,41 @@ const Qualidade = () => {
       field: "registopor",
       headerName: "Registado por",
       flex: 1,
+    },
+    {
+      field: "Maisdetalhes",
+      headerName: "Mais detalhes",
+      flex: 1,
+      renderCell: () => (
+        <Button
+          sx={{
+            backgroundColor: colors.greenAccent[600],
+            color: colors.grey[100],
+            fontSize: "10px",
+            fontWeight: "bold",
+            padding: "10px 20px",
+
+            "&:hover": {
+              backgroundColor: colors.grey[100],
+              color: colors.blueAccent[600],
+            },
+          }}
+          variant="contained"
+          color="primary"
+          component={Link}
+          to="/RelatorioX"
+        >
+          Mais detalhes
+        </Button>
+        //   <Button
+        //   variant="contained"
+        //   color="primary"
+        //   component={Link}
+        //   to={`/RelatórioX/${params.row.id}`}
+        // >
+        //  Mais detalhes
+        // </Button> //PARA PERCORRER TODOS OS IDS
+      ),
     },
   ];
 
@@ -269,12 +305,12 @@ const Qualidade = () => {
                     >
                       Introduza os dados do erro sucedido
                     </DialogContentText>
-                    <Typography variant="subtitle1">Type:</Typography>
+                    <Typography variant="subtitle1">Tipo:</Typography>
                     <TextField
                       select
                       margin="dense"
                       id="type"
-                      label="Type"
+                      label="Tipo"
                       fullWidth
                       value={selectedType}
                       onChange={(event) => setSelectedType(event.target.value)}

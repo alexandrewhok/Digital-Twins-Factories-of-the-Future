@@ -132,7 +132,7 @@ const Encomendas = () => {
             backgroundColor: colors.greenAccent[600],
             color: colors.grey[100],
             fontSize: "10px",
-            fontWeight: "regular",
+            fontWeight: "bold",
             padding: "10px 20px",
 
             "&:hover": {

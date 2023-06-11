@@ -9,6 +9,7 @@ import Qualidade from "./scenes/Qualidade";
 import MateriaPrima from "./scenes/MateriaPrima";
 import Dispositivos from "./scenes/Dispositivos";
 import EncomendaX from "./scenes/EncomendaX";
+import RelatorioX from "./scenes/RelatorioX";
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -33,6 +34,7 @@ function App() {
               <Route exact path="/MateriaPrima" element={<MateriaPrima />} />
               <Route exact path="/Dispositivos" element={<Dispositivos />} />
               <Route exact path="/EncomendaX" element={<EncomendaX />} />
+              <Route exact path="/RelatorioX" element={<RelatorioX />} />
             </Routes>
           </div>
         </div>
