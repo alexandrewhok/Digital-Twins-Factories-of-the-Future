@@ -74,15 +74,6 @@ const Seccao5 = () => {
         pb="20px"
       >
         <Box gridColumn="span 8">
-          {/* <Typography
-            display="flex"
-            alignItems="center"
-            justifyContent="flex-start"
-            p="5px 0 5px 0"
-            variant="h3"
-          >
-            Secção Matéria prima
-          </Typography> */}
           <Box
             display="flex"
             alignItems="center"

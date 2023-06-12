@@ -453,14 +453,14 @@ export const mockDataOrders = [
     nome: "Encomenda X",
     estado: "Em produção",
     seccaoatual: "Secção 1",
-    registo: "01 - 05 - 2023",
+    estado: "Em utilização",
   },
   {
     id: 2,
     nome: "Encomenda X",
     estado: "Em produção",
     seccaoatual: "Secção 1",
-    registo: "01 - 05 - 2023",
+    estado: "Em utilização",
   },
   {
     id: 3,
@@ -563,11 +563,12 @@ export const mockDataOrders = [
   },
 ];
 
-export const mockDataOReports = [
+export const mockDataReports = [
   {
     id: 1,
     nome: "Relatório X",
-    registo: "01 - 05 - 2023",
+    registo: " 01 - 06 - 2023",
+    estado: "Em utilização",
     seccao: "Secção 1",
     registopor: "Jonh Doe",
     tipo: "Seguimento",
@@ -575,7 +576,8 @@ export const mockDataOReports = [
   {
     id: 2,
     nome: "Relatório X",
-    registo: "01 - 05 - 2023",
+    registo: " 01 - 06 - 2023",
+    estado: "Em utilização",
     seccao: "Secção 1",
     registopor: "Jonh Doe",
     tipo: "Seguimento",
@@ -680,7 +682,7 @@ export const mockDataOReports = [
   {
     id: 15,
     nome: "Relatório X",
-    registo: "1 - 07 - 2023",
+    registo: "01 - 07 - 2023",
     seccao: "Secção 1",
     registopor: "Jonh Doe",
     tipo: "Seguimento",
@@ -692,5 +694,244 @@ export const mockDataOReports = [
     seccao: "Secção 1",
     registopor: "Jonh Doe",
     tipo: "Seguimento",
+  },
+];
+
+export const mockMaterial = [
+  {
+    id: 1,
+    nome: "Madeira",
+    estado: "Em utilização",
+    quantidade: "3500kg",
+  },
+  {
+    id: 2,
+    nome: "Ferro",
+    estado: "Em utilização",
+    quantidade: "200kg",
+  },
+  {
+    id: 3,
+    nome: "Cobre",
+    estado: "Sem utilização",
+    quantidade: "250kg",
+  },
+  {
+    id: 4,
+    nome: "Papel",
+    estado: "Sem utilização",
+    quantidade: "150kg",
+  },
+  {
+    id: 5,
+    nome: "Linho",
+    estado: "Sem utilização",
+    quantidade: "500kg",
+  },
+];
+
+export const mockPieData = [
+  {
+    id: "Madeira",
+    label: "Madeira",
+    value: 284,
+    color: "hsl(104, 70%, 50%)",
+  },
+  {
+    id: "Ferro",
+    label: "Ferro",
+    value: 70,
+    color: "hsl(162, 70%, 50%)",
+  },
+  {
+    id: "Cobre",
+    label: "Cobre",
+    value: 22,
+    color: "hsl(291, 70%, 50%)",
+  },
+  {
+    id: "Papel",
+    label: "Papel",
+    value: 53,
+    color: "hsl(229, 70%, 50%)",
+  },
+  {
+    id: "Linho",
+    label: "Linho",
+    value: 84,
+    color: "hsl(344, 70%, 50%)",
+  },
+];
+
+export const mockLineDataMaterial = [
+  {
+    id: "Madeira",
+    color: "hsl(104, 70%, 50%)",
+    data: [
+      {
+        x: "SEG",
+        y: 10,
+      },
+      {
+        x: "TER",
+        y: 75,
+      },
+      {
+        x: "QUA",
+        y: 0,
+      },
+      {
+        x: "QUI",
+        y: 0,
+      },
+      {
+        x: "SEX",
+        y: 20,
+      },
+      {
+        x: "SAB",
+        y: 0,
+      },
+      {
+        x: "DOM",
+        y: 10,
+      },
+    ],
+  },
+  {
+    id: "Ferro",
+    color: "hsl(162, 70%, 50%)",
+    data: [
+      {
+        x: "SEG",
+        y: 55,
+      },
+      {
+        x: "TER",
+        y: 0,
+      },
+      {
+        x: "QUA",
+        y: 0,
+      },
+      {
+        x: "QUI",
+        y: 0,
+      },
+      {
+        x: "SEX",
+        y: 20,
+      },
+      {
+        x: "SAB",
+        y: 16,
+      },
+      {
+        x: "DOM",
+        y: 0,
+      },
+    ],
+  },
+  {
+    id: "Cobre",
+    color: "hsl(291, 70%, 50%)",
+    data: [
+      {
+        x: "SEG",
+        y: 0,
+      },
+      {
+        x: "TER",
+        y: 70,
+      },
+      {
+        x: "QUA",
+        y: 0,
+      },
+      {
+        x: "QUI",
+        y: 0,
+      },
+      {
+        x: "SEX",
+        y: 0,
+      },
+      {
+        x: "SAB",
+        y: 6,
+      },
+      {
+        x: "DOM",
+        y: 0,
+      },
+    ],
+  },
+  {
+    id: "Papel",
+    color: "hsl(229, 70%, 50%)",
+    data: [
+      {
+        x: "SEG",
+        y: 0,
+      },
+      {
+        x: "TER",
+        y: 0,
+      },
+      {
+        x: "QUA",
+        y: 0,
+      },
+      {
+        x: "QUI",
+        y: 26,
+      },
+      {
+        x: "SEX",
+        y: 0,
+      },
+      {
+        x: "SAB",
+        y: 0,
+      },
+      {
+        x: "DOM",
+        y: 0,
+      },
+    ],
+  },
+  {
+    id: "Linho",
+    color: "hsl(344, 70%, 50%)",
+    data: [
+      {
+        x: "SEG",
+        y: 0,
+      },
+      {
+        x: "TER",
+        y: 0,
+      },
+      {
+        x: "QUA",
+        y: 46,
+      },
+      {
+        x: "QUI",
+        y: 0,
+      },
+      {
+        x: "SEX",
+        y: 22,
+      },
+      {
+        x: "SAB",
+        y: 0,
+      },
+      {
+        x: "DOM",
+        y: 0,
+      },
+    ],
   },
 ];

@@ -25,7 +25,7 @@ import { Link, useParams } from "react-router-dom";
 import WarningIcon from "@mui/icons-material/Warning";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { mockDataOReports } from "../../data/mockData";
+import { mockDataReports } from "../../data/mockData";
 
 const Qualidade = () => {
   const theme = useTheme();
@@ -703,7 +703,7 @@ const Qualidade = () => {
               }}
             >
               <DataGrid
-                rows={mockDataOReports}
+                rows={mockDataReports}
                 columns={columns}
                 initialState={{
                   pagination: {
