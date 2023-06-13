@@ -485,7 +485,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 8"
           backgroundColor={colors.primary[400]}
-          height="55vh"
+          height="60vh"
         >
           <Box
             m="30px 30px 20px 30px"

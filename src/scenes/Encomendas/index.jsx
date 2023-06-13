@@ -508,7 +508,7 @@ const Encomendas = () => {
             {/* TABELA DE ENCOMENDAS */}
             <Box
               pt="20px"
-              height="85vh"
+              height="100vh"
               sx={{
                 "& .MuiDataGrid-columnHeaderTitle": {
                   fontWeight: theme.typography.h4,

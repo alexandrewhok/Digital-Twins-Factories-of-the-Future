@@ -453,14 +453,14 @@ export const mockDataOrders = [
     nome: "Encomenda X",
     estado: "Em produção",
     seccaoatual: "Secção 1",
-    estado: "Em utilização",
+    registo: " 01 - 06 - 2023",
   },
   {
     id: 2,
     nome: "Encomenda X",
     estado: "Em produção",
     seccaoatual: "Secção 1",
-    estado: "Em utilização",
+    registo: " 01 - 06 - 2023",
   },
   {
     id: 3,
@@ -552,7 +552,7 @@ export const mockDataOrders = [
     nome: "Encomenda X",
     estado: "Em produção",
     seccaoatual: "Secção 1",
-    registo: "1 - 07 - 2023",
+    registo: "01 - 07 - 2023",
   },
   {
     id: 16,
