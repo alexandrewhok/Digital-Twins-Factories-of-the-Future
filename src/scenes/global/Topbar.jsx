@@ -56,7 +56,7 @@ const Topbar = () => {
   };
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div>A carregar... precisa de ligação à internet :(</div>;
   }
 
   return (
@@ -104,7 +104,7 @@ const Topbar = () => {
               backgroundColor: colors.primary[400],
             },
           }}
-          aria-describedby="Informação do user"
+          aria-describedby="Informação do utilizador"
         >
           <DialogContent>
             <Typography

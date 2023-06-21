@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
-import Section2 from "../section/Section2";
+import { tokens } from "../../theme";
+import Section5 from "../section/Section5";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import TopInfo from "../../components/TopInfo";
+import TopInfo from "../../scenes/global/TopInfo";
 
 import BarChart from "../BarChart";
 
-const Seccao2 = () => {
-  const [checked2, setChecked2] = useState(true);
+const Seccao5 = () => {
+  const [checked5, setChecked5] = useState(true);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -74,15 +74,6 @@ const Seccao2 = () => {
         pb="20px"
       >
         <Box gridColumn="span 8">
-          {/* <Typography
-            display="flex"
-            alignItems="center"
-            justifyContent="flex-start"
-            p="5px 0 5px 0"
-            variant="h3"
-          >
-            Secção Matéria prima
-          </Typography> */}
           <Box
             display="flex"
             alignItems="center"
@@ -90,7 +81,7 @@ const Seccao2 = () => {
             height="55vh"
             backgroundColor={colors.primary[400]}
           >
-            <Section2 checked={checked2} />
+            <Section5 checked={checked5} />
           </Box>
         </Box>
         <Box
@@ -329,7 +320,7 @@ const Seccao2 = () => {
   );
 };
 
-export default Seccao2;
+export default Seccao5;
 const Box3 = styled.div`
   border-bottom: 1px solid grey;
   display: flex;

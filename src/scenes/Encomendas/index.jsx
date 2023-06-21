@@ -15,11 +15,11 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import Header from "../components/Header";
-import TopInfo from "../components/TopInfo";
+import Header from "../global/Header";
+import TopInfo from "../global/TopInfo";
 import { tokens } from "../../theme";
-// import AddIcon from "@mui/icons-material/Add";
-// import styled from "@emotion/styled";
+import AddIcon from "@mui/icons-material/Add";
+
 import { DataGrid } from "@mui/x-data-grid";
 import { Link, useParams } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -129,7 +129,7 @@ const Encomendas = () => {
       renderCell: () => (
         <Button
           sx={{
-            backgroundColor: colors.greenAccent[600],
+            backgroundColor: colors.blueAccent[400],
             color: colors.grey[100],
             fontSize: "10px",
             fontWeight: "bold",
@@ -274,7 +274,7 @@ const Encomendas = () => {
                   onClick={handleClickOpen}
                 >
                   Registar encomenda
-                  {/* <AddIcon sx={{ ml: "10px" }} /> */}
+                  <AddIcon sx={{ ml: "10px" }} />
                 </Button>
                 {/* DIALOG DE REGISTAR ENCOMENDA */}
                 <Dialog

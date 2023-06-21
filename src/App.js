@@ -22,6 +22,7 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+
         <div style={{ display: "flex" }}>
           <Sidebar isSidebar={isSidebar} />
           <div style={{ flex: 1, overflow: "auto" }}>

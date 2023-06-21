@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
-import Section1 from "../section/Section1";
+import { tokens } from "../../theme";
+import Section2 from "../section/Section2";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import TopInfo from "../../components/TopInfo";
+import TopInfo from "../../scenes/global/TopInfo";
 
 import BarChart from "../BarChart";
 
-const Seccao1 = () => {
-  const [checked1, setChecked1] = useState(true);
+const Seccao2 = () => {
+  const [checked2, setChecked2] = useState(true);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -90,7 +90,7 @@ const Seccao1 = () => {
             height="55vh"
             backgroundColor={colors.primary[400]}
           >
-            <Section1 checked={checked1} />
+            <Section2 checked={checked2} />
           </Box>
         </Box>
         <Box
@@ -130,7 +130,7 @@ const Seccao1 = () => {
               </Typography>
             </Box>
 
-            <a href="/Encomendas" style={{ textDecoration: "none" }}>
+            <a href="/Qualidade" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
                 Mais detalhes
               </Typography>
@@ -329,8 +329,7 @@ const Seccao1 = () => {
   );
 };
 
-export default Seccao1;
-
+export default Seccao2;
 const Box3 = styled.div`
   border-bottom: 1px solid grey;
   display: flex;

@@ -2,7 +2,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined"; //Dispositivos
 import IconButton from "@mui/material/IconButton";
-import Header from "../components/Header";
+import Header from "../global/Header";
 
 const Dispositivos = () => {
   const theme = useTheme();

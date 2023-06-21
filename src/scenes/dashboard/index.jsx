@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import Header from "../components/Header";
+import Header from "../global/Header";
 import { tokens } from "../../theme";
-import TopInfo from "../components/TopInfo";
+import TopInfo from "../global/TopInfo";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import * as React from "react";
 
@@ -10,13 +10,13 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import Chip from "@mui/material/Chip";
 import Checkbox from "@mui/material/Checkbox";
 
-import Section1 from "../components/section/Section1";
-import Section2 from "../components/section/Section2";
-import Section3 from "../components/section/Section3";
-import Section4 from "../components/section/Section4";
-import Section5 from "../components/section/Section5";
+import Section1 from "../../components/section/Section1";
+import Section2 from "../../components/section/Section2";
+import Section3 from "../../components/section/Section3";
+import Section4 from "../../components/section/Section4";
+import Section5 from "../../components/section/Section5";
 
-import LineChart from "../components/LineChart";
+import LineChart from "../../components/LineChart";
 
 import { useState } from "react";
 import styled from "@emotion/styled";
@@ -171,7 +171,7 @@ const Dashboard = () => {
                 control={
                   <Switch
                     defaultChecked
-                    color="secondary"
+                    color="info"
                     onChange={() => setChecked1(!checked1)}
                   />
                 }
@@ -186,7 +186,7 @@ const Dashboard = () => {
                 control={
                   <Switch
                     defaultChecked
-                    color="secondary"
+                    color="info"
                     onChange={() => setChecked2(!checked2)}
                   />
                 }
@@ -201,7 +201,7 @@ const Dashboard = () => {
                 control={
                   <Switch
                     defaultChecked
-                    color="secondary"
+                    color="info"
                     onChange={() => setChecked3(!checked3)}
                   />
                 }
@@ -216,7 +216,7 @@ const Dashboard = () => {
                 control={
                   <Switch
                     defaultChecked
-                    color="secondary"
+                    color="info"
                     onChange={() => setChecked4(!checked4)}
                   />
                 }
@@ -231,7 +231,7 @@ const Dashboard = () => {
                 control={
                   <Switch
                     defaultChecked
-                    color="secondary"
+                    color="info"
                     onChange={() => setChecked5(!checked5)}
                   />
                 }
@@ -256,7 +256,7 @@ const Dashboard = () => {
               <FormControlLabel
                 componentsProps={{ typography: { variant: "h5" } }}
                 value="start"
-                control={<Switch defaultChecked color="secondary" />}
+                control={<Switch defaultChecked color="info" />}
                 label="Manhã"
                 labelPlacement="start"
               />
@@ -265,7 +265,7 @@ const Dashboard = () => {
               <FormControlLabel
                 componentsProps={{ typography: { variant: "h5" } }}
                 value="start"
-                control={<Switch defaultChecked color="secondary" />}
+                control={<Switch defaultChecked color="info" />}
                 label="Tarde"
                 labelPlacement="start"
               />
@@ -274,7 +274,7 @@ const Dashboard = () => {
               <FormControlLabel
                 componentsProps={{ typography: { variant: "h5" } }}
                 value="start"
-                control={<Switch defaultChecked color="secondary" />}
+                control={<Switch defaultChecked color="info" />}
                 label="Noite"
                 labelPlacement="start"
               />

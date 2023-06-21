@@ -2,18 +2,18 @@ import * as React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Header from "../components/Header";
+import Header from "../global/Header";
 import { tokens } from "../../theme";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import queryString from "query-string";
 
-import Seccao1 from "../components/Seccao1";
-import Seccao2 from "../components/Seccao2";
-import Seccao3 from "../components/Seccao3";
-import Seccao4 from "../components/Seccao4";
-import Seccao5 from "../components/Seccao5";
+import Seccao1 from "../../components/Seccao1";
+import Seccao2 from "../../components/Seccao2";
+import Seccao3 from "../../components/Seccao3";
+import Seccao4 from "../../components/Seccao4";
+import Seccao5 from "../../components/Seccao5";
 import { useNavigate } from "react-router-dom";
 
 function TabPanel(props) {
@@ -104,13 +104,13 @@ export default function NavTabs() {
             onChange={handleChange}
             TabIndicatorProps={{ sx: { backgroundColor: "#adadad" } }}
             sx={{
-              "& button:hover": { backgroundColor: "grey", color: "white" },
+              "& button:hover": { backgroundColor: "#0DCAF0", color: "white" },
               "& button": {
                 fontWeight: theme.typography.h4,
                 textTransform: "none",
               },
               "& button.Mui-selected": {
-                backgroundColor: "#198754",
+                backgroundColor: "#0D6EFD",
                 color: "white",
               },
             }}

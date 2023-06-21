@@ -14,8 +14,8 @@ import {
   Popover,
   IconButton,
 } from "@mui/material";
-import Header from "../components/Header";
-import TopInfo from "../components/TopInfo";
+import Header from "../global/Header";
+import TopInfo from "../global/TopInfo";
 import { tokens } from "../../theme";
 import AddIcon from "@mui/icons-material/Add";
 import { DataGrid } from "@mui/x-data-grid";
@@ -26,8 +26,8 @@ import {
   mockPieData,
   mockLineDataMaterial,
 } from "../../data/mockData";
-import PieChart from "../components/PieChart";
-import LinechartMaterial from "../components/LinechartMaterial";
+import PieChart from "../../components/PieChart";
+import LinechartMaterial from "../../components/LinechartMaterial";
 
 const MateriaPrima = () => {
   const theme = useTheme();

@@ -16,7 +16,8 @@ import {
   TextField,
   MenuItem,
 } from "@mui/material";
-import TopInfo from "../components/TopInfo";
+// import TopInfo from "../components/TopInfo";
+import TopInfo from "../global/TopInfo";
 import { tokens } from "../../theme";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
@@ -370,7 +371,7 @@ const EncomendaX = () => {
                 return (
                   <Step key={label}>
                     {/* colocar isto dentro do steplabel muda os icons de certo  StepIconComponent={QontoStepIcon} */}
-            {/*   <StepLabel {...labelProps}>
+            {/*  <StepLabel {...labelProps}>
                       {" "}
                       <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                         {label}
@@ -811,12 +812,6 @@ const EncomendaX = () => {
                 Materiais utilizados na encomenda
               </Typography>
             </Box>
-
-            {/* <a href="/Qualidade" style={{ textDecoration: "none" }}>
-              <Typography variant="h5" color={colors.blueAccent[400]}>
-                Mais detalhes
-              </Typography>
-            </a> */}
           </Box>
           <Box3
             display="flex"
@@ -866,12 +861,6 @@ const EncomendaX = () => {
                 Relatórios da Encomenda X
               </Typography>
             </Box>
-
-            {/* <a href="/Qualidade" style={{ textDecoration: "none" }}>
-              <Typography variant="h5" color={colors.blueAccent[400]}>
-                Mais detalhes
-              </Typography>
-            </a> */}
           </Box>
           <Box3
             display="flex"

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Box, Typography, useTheme, Button } from "@mui/material";
-import TopInfo from "../components/TopInfo";
+import TopInfo from "../../scenes/global/TopInfo";
 import { tokens } from "../../theme";
 
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";

@@ -15,8 +15,8 @@ import {
   Popover,
   IconButton,
 } from "@mui/material";
-import Header from "../components/Header";
-import TopInfo from "../components/TopInfo";
+import Header from "../global/Header";
+import TopInfo from "../../scenes/global/TopInfo";
 import { tokens } from "../../theme";
 import AddIcon from "@mui/icons-material/Add";
 // import styled from "@emotion/styled";
@@ -125,7 +125,7 @@ const Qualidade = () => {
       renderCell: () => (
         <Button
           sx={{
-            backgroundColor: colors.greenAccent[600],
+            backgroundColor: colors.blueAccent[400],
             color: colors.grey[100],
             fontSize: "10px",
             fontWeight: "bold",
@@ -411,8 +411,8 @@ const Qualidade = () => {
                     <Button
                       ref={anchorRef}
                       id="confirm-button"
-                      onClick={handleConfirm}
-                      aria-describedby={popoverId}
+                      // onClick={handleConfirm}
+                      // aria-describedby={popoverId}
                       variant="contained"
                       sx={{
                         backgroundColor: colors.greenAccent[500],
@@ -480,8 +480,8 @@ const Qualidade = () => {
                   }}
                   onClick={handleClickOpen}
                 >
-                  Registar Relatório
-                  {/* <AddIcon sx={{ ml: "10px" }} /> */}
+                  Registar relatório
+                  <AddIcon sx={{ ml: "10px" }} />
                 </Button>
                 {/* DIALOG DE REGISTAR RELATÓRIO */}
                 <Dialog

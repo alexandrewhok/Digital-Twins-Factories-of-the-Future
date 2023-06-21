@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
-import Section3 from "../section/Section3";
+import { tokens } from "../../theme";
+import Section4 from "../section/Section4";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import TopInfo from "../../components/TopInfo";
+import TopInfo from "../../scenes/global/TopInfo";
 
 import BarChart from "../BarChart";
 
-const Seccao3 = () => {
-  const [checked3, setChecked3] = useState(true);
+const Seccao4 = () => {
+  const [checked4, setChecked4] = useState(true);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -90,7 +90,7 @@ const Seccao3 = () => {
             height="55vh"
             backgroundColor={colors.primary[400]}
           >
-            <Section3 checked={checked3} />
+            <Section4 checked={checked4} />
           </Box>
         </Box>
         <Box
@@ -106,6 +106,7 @@ const Seccao3 = () => {
         gridTemplateColumns="repeat(16, 1fr)"
         gridAutoFlow="140px"
         gap="20px"
+        pb="20px"
       >
         {/* COLUNA 2 */}
         <Box gridColumn="span 8" backgroundColor={colors.primary[400]}>
@@ -328,7 +329,7 @@ const Seccao3 = () => {
   );
 };
 
-export default Seccao3;
+export default Seccao4;
 const Box3 = styled.div`
   border-bottom: 1px solid grey;
   display: flex;
