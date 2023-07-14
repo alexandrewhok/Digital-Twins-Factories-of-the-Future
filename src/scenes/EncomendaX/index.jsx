@@ -480,12 +480,12 @@ const EncomendaX = () => {
                         >
                           Introduza os dados do erro sucedido
                         </DialogContentText>
-                        <Typography variant="subtitle1">Type:</Typography>
+                        <Typography variant="subtitle1">Tipo:</Typography>
                         <TextField
                           select
                           margin="dense"
                           id="type"
-                          label="Type"
+                          label="Tipo"
                           fullWidth
                           value={selectedType}
                           onChange={(event) =>

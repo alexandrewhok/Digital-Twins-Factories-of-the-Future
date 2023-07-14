@@ -20,8 +20,8 @@ const Dispositivos = () => {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        height="calc(100vh - 200px)" /* Subtract the height of the top bar if it has a fixed height */
-        overflow="hidden" /* Hide any content overflow */
+        height="calc(100vh - 200px)" /* -200px pelo valor do header e da top bar */
+        overflow="hidden" /* ecrã sem scroll */
       >
         <Box
           backgroundColor={colors.primary[400]}

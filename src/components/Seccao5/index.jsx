@@ -117,7 +117,7 @@ const Seccao5 = () => {
                 Últimas Encomendas
               </Typography>
               <Typography variant="h5" color={colors.grey[400]}>
-                Encomendas da Matéria Prima
+                Encomendas de Transporte
               </Typography>
             </Box>
 
@@ -215,7 +215,7 @@ const Seccao5 = () => {
                 Últimos Relatórios
               </Typography>
               <Typography variant="h5" color={colors.grey[400]}>
-                Todas as secções
+                Transporte
               </Typography>
             </Box>
 

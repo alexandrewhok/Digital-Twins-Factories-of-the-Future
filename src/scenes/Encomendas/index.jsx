@@ -186,7 +186,7 @@ const Encomendas = () => {
           justifyContent="center"
           textAlign="center"
         >
-          <TopInfo title="Em produção" subtitle="8" />
+          <TopInfo title="Em produção" subtitle="10" />
         </Box>
 
         <Box
@@ -197,7 +197,7 @@ const Encomendas = () => {
           justifyContent="center"
           textAlign="center"
         >
-          <TopInfo title="Aguarda entrada" subtitle="2" />
+          <TopInfo title="Aguarda entrada" subtitle="0" />
         </Box>
         <Box
           gridColumn="span 3"
@@ -207,7 +207,7 @@ const Encomendas = () => {
           justifyContent="center"
           textAlign="center"
         >
-          <TopInfo title="Em espera" subtitle="0" />
+          <TopInfo title="Em espera" subtitle="4" />
         </Box>
         <Box
           gridColumn="span 3"
@@ -217,7 +217,7 @@ const Encomendas = () => {
           justifyContent="center"
           textAlign="center"
         >
-          <TopInfo title="Previsto" subtitle="10" />
+          <TopInfo title="Previsto" subtitle="14" />
         </Box>
         <Box
           gridColumn="span 3"
@@ -508,7 +508,7 @@ const Encomendas = () => {
             {/* TABELA DE ENCOMENDAS */}
             <Box
               pt="20px"
-              height="100vh"
+              height="50em"
               sx={{
                 "& .MuiDataGrid-columnHeaderTitle": {
                   fontWeight: theme.typography.h4,

@@ -43,7 +43,7 @@ const Dashboard = () => {
   // };
 
   return (
-    <Box m="15px" pb="30px">
+    <Box m="15px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Visão geral da fábrica" />
       </Box>
@@ -61,7 +61,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <TopInfo title="Em produção" subtitle="20" subtitleColor="green" />
+          <TopInfo title="Em produção" subtitle="10" subtitleColor="green" />
         </Box>
 
         <Box
@@ -71,7 +71,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <TopInfo title="Montagem" subtitle="20" />
+          <TopInfo title="Montagem" subtitle="6" />
         </Box>
         <Box
           gridColumn="span 3"
@@ -80,7 +80,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <TopInfo title="Desmontagem" subtitle="20" />
+          <TopInfo title="Desmontagem" subtitle="8" />
         </Box>
         <Box
           gridColumn="span 3"
@@ -89,7 +89,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <TopInfo title="Aguardar" subtitle="20" />
+          <TopInfo title="Aguardar" subtitle="0" />
         </Box>
         <Box
           gridColumn="span 3"
@@ -98,7 +98,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <TopInfo title="Finalizadas" subtitle="20" />
+          <TopInfo title="Finalizadas" subtitle="10" />
         </Box>
         {/* TOP VIEW FLOOR */}
         <Box gridColumn="span 12" backgroundColor={colors.primary[400]}>
@@ -312,6 +312,7 @@ const Dashboard = () => {
             display="flex"
             flexDirection="column"
             alignItems="center"
+            justifyContent="center"
           >
             <Typography variant="h5" color={colors.grey[200]} m="10px">
               Concluídas (hoje)
@@ -340,7 +341,7 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Typography variant="h5" color={colors.grey[200]} m="10px">
-              Tempo de espera (secção)
+              Tempo de espera
             </Typography>
             <Typography variant="h3" color={colors.greenAccent[500]}>
               2 min
@@ -415,7 +416,21 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Seleção de madeiras - barco ubiwhere
+            </Typography>
+            <a href="/RelatorioX" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box3>
+          <Box3
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" color={colors.grey[100]}>
+              Finalização de paletes
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -429,7 +444,7 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Montagem de garrafas
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -443,7 +458,7 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Desmontagem de caixas
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -457,21 +472,7 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
-            </Typography>
-            <a href="#" style={{ textDecoration: "none" }}>
-              <Typography variant="h5" color={colors.blueAccent[400]}>
-                Mais detalhes
-              </Typography>
-            </a>
-          </Box3>
-          <Box3
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Envio de carregadores
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -485,7 +486,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 8"
           backgroundColor={colors.primary[400]}
-          height="60vh"
+          // height="60vh"
         >
           <Box
             m="30px 30px 20px 30px"
@@ -572,7 +573,7 @@ const Dashboard = () => {
                 }}
               />
               <Typography variant="h4" color={colors.grey[100]}>
-                Nome da tarefa
+                Reposição de novas etiquetas
               </Typography>
             </Box>
             <Chip label="Novo" color="info" size="small" />
@@ -593,7 +594,7 @@ const Dashboard = () => {
                 }}
               />
               <Typography variant="h4" color={colors.grey[100]}>
-                Nome da tarefa
+                Verificar dados do sensor de contagem
               </Typography>
             </Box>
             <Chip label="Padrão" color="default" size="small" />

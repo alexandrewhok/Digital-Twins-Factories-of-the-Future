@@ -32,7 +32,7 @@ const RelatorioX = () => {
           <ArrowCircleLeftIcon fontSize="large" />
         </Link>
         <Typography variant="h3" pl="5px">
-          Relatorio X
+          Seleção de madeiras - barco ubiwhere
         </Typography>
       </Box>
       {/* TOP INFO */}

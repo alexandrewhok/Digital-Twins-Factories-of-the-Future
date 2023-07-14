@@ -22,7 +22,7 @@ const TopInfo = ({ title, subtitle, subtitleColor = "grey.100" }) => {
         </Box>
         <Box>
           <Typography
-            variant="h2"
+            variant="h3"
             fontWeight="bold"
             sx={{ color: colorObject }} // Use the color object
           >

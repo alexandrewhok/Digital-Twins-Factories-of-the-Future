@@ -329,7 +329,7 @@ const Qualidade = () => {
                       required
                       margin="dense"
                       id="nome-encomenda"
-                      label="Nome drelatório"
+                      label="Nome do relatório"
                       type="text"
                       fullWidth
                       placeholder="Introduzir nome"
@@ -671,7 +671,7 @@ const Qualidade = () => {
             {/* TABELA DE ENCOMENDAS */}
             <Box
               pt="20px"
-              height="100vh"
+              height="50em"
               sx={{
                 "& .MuiDataGrid-columnHeaderTitle": {
                   fontWeight: theme.typography.h4,

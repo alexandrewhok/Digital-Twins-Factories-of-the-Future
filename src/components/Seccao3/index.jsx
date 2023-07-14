@@ -125,7 +125,7 @@ const Seccao3 = () => {
                 Últimas Encomendas
               </Typography>
               <Typography variant="h5" color={colors.grey[400]}>
-                Encomendas da Matéria Prima
+                Encomendas da Desmontagem
               </Typography>
             </Box>
 
@@ -223,7 +223,7 @@ const Seccao3 = () => {
                 Últimos Relatórios
               </Typography>
               <Typography variant="h5" color={colors.grey[400]}>
-                Todas as secções
+                Desmontagem
               </Typography>
             </Box>
 
@@ -305,25 +305,6 @@ const Seccao3 = () => {
           </Box3>
         </Box>
       </Box>
-      {/* TESTE */}
-      {/* 
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(16,1fr)"
-        gridAutoFlow="140px"
-        gap="20px"
-      >
-        <Box
-          gridColumn="span 16"
-          backgroundColor={colors.primary[400]}
-          height="60vh"
-        >
-          <Box m="20px 0px 0px 20px">
-   
-          </Box>
-          <BarChart />
-        </Box>
-      </Box> */}
     </Box>
   );
 };

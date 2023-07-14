@@ -151,7 +151,7 @@ const MateriaPrima = () => {
               flexDirection="row"
               justifyContent="space-between"
               alignItems="flex-end"
-              p="30px 0 20px 0"
+              pb="40px"
             >
               <Box display="flex" flexDirection="column">
                 <Typography
@@ -335,9 +335,9 @@ const MateriaPrima = () => {
                 </Popover>
               </Box>
             </Box>
-            {/* TABELA DE ENCOMENDAS */}
+            {/* TABELA DE MATERIAIS */}
             <Box
-              pt="20px"
+              pt="10px"
               height="50vh"
               sx={{
                 "& .MuiDataGrid-columnHeaderTitle": {

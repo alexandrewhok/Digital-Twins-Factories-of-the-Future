@@ -142,7 +142,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Nome da Encomenda
+              Barco ubiwhere
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -156,7 +156,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Nome da Encomenda
+              Paletes madeira
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -170,7 +170,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Nome da Encomenda
+              Carregadores solares
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -184,7 +184,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Nome da Encomenda
+              Lápis de carvão
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -198,7 +198,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Nome da Encomenda
+              Pneus de carro
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -224,7 +224,7 @@ const Seccao1 = () => {
                 Últimos Relatórios
               </Typography>
               <Typography variant="h5" color={colors.grey[400]}>
-                Todas as secções
+                Matéria Prima
               </Typography>
             </Box>
 
@@ -240,7 +240,21 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Seleção de madeiras - barco ubiwhere
+            </Typography>
+            <a href="/RelatorioX" style={{ textDecoration: "none" }}>
+              <Typography variant="h5" color={colors.blueAccent[400]}>
+                Mais detalhes
+              </Typography>
+            </a>
+          </Box3>
+          <Box3
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" color={colors.grey[100]}>
+              Iniciação de carregadores de metal
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -254,7 +268,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Seleção de vidros - garrafas
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -268,7 +282,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Entrada de paletes
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -282,21 +296,7 @@ const Seccao1 = () => {
             alignItems="center"
           >
             <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
-            </Typography>
-            <a href="#" style={{ textDecoration: "none" }}>
-              <Typography variant="h5" color={colors.blueAccent[400]}>
-                Mais detalhes
-              </Typography>
-            </a>
-          </Box3>
-          <Box3
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Typography variant="h4" color={colors.grey[100]}>
-              Relatório X
+              Seleção de linhas
             </Typography>
             <a href="#" style={{ textDecoration: "none" }}>
               <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -306,25 +306,6 @@ const Seccao1 = () => {
           </Box3>
         </Box>
       </Box>
-      {/* TESTE */}
-      {/* 
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(16,1fr)"
-        gridAutoFlow="140px"
-        gap="20px"
-      >
-        <Box
-          gridColumn="span 16"
-          backgroundColor={colors.primary[400]}
-          height="60vh"
-        >
-          <Box m="20px 0px 0px 20px">
-   
-          </Box>
-          <BarChart />
-        </Box>
-      </Box> */}
     </Box>
   );
 };

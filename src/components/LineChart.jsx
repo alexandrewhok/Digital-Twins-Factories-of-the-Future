@@ -55,7 +55,6 @@ const LineChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        // legend: "transportation",
         legendOffset: 36,
         legendPosition: "middle",
       }}
@@ -63,7 +62,6 @@ const LineChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        // legend: "count",
         legendOffset: -40,
         legendPosition: "middle",
       }}
