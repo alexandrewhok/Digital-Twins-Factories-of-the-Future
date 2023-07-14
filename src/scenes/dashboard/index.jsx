@@ -318,7 +318,7 @@ const Dashboard = () => {
               Concluídas (hoje)
             </Typography>
             <Typography variant="h3" color={colors.greenAccent[500]}>
-              15
+              16
             </Typography>
           </Box>
           <Box
