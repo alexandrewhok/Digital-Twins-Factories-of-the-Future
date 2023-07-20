@@ -220,7 +220,7 @@ const MateriaPrima = () => {
                       required
                       margin="dense"
                       id="nome-encomenda"
-                      label="Nome do relatório"
+                      label="Nome da matéria prima"
                       type="text"
                       fullWidth
                       placeholder="Introduzir nome"
